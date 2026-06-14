@@ -1,0 +1,230 @@
+/* ═══════════════════════════════════════════════
+   MetaMoves — Animations
+   ═══════════════════════════════════════════════ */
+
+/* ── Fade In Up (staggered entry) ────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--transition-slow) ease-out both;
+}
+
+/* ── Glow Pulse ──────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--color-accent-glow-strong);
+  }
+}
+
+/* ── Star Twinkle ────────────────────────────── */
+@keyframes starTwinkle {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.4);
+  }
+}
+
+/* ── Shimmer (loading) ───────────────────────── */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-card) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    var(--color-bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ── Badge Pulse ─────────────────────────────── */
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 255, 135, 0);
+  }
+}
+
+/* ── Float ───────────────────────────────────── */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Vue Transition: Card List ───────────────── */
+.card-list-enter-active {
+  transition: all var(--transition-slow) ease-out;
+}
+
+.card-list-leave-active {
+  transition: all var(--transition-base) ease-in;
+  position: absolute;
+}
+
+.card-list-enter-from {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.card-list-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+}
+
+.card-list-move {
+  transition: transform var(--transition-slow) ease;
+}
+
+/* ── Vue Transition: Fade ────────────────────── */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--transition-base) ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ── Vue Transition: Drawer Slide ────────────── */
+.drawer-enter-active,
+.drawer-leave-active {
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drawer-enter-from,
+.drawer-leave-to {
+  transform: translateX(100%);
+}
+
+/* ── Vue Transition: Backdrop ────────────────── */
+.backdrop-enter-active,
+.backdrop-leave-active {
+  transition: opacity 300ms ease;
+}
+
+.backdrop-enter-from,
+.backdrop-leave-to {
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   Skill Move SVG Animations
+   ═══════════════════════════════════════════════ */
+
+/* ── lateral-shift ───────────────────────────── */
+@keyframes anim-lateral-shift {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(18px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-18px); }
+}
+
+/* ── forward-flick ───────────────────────────── */
+@keyframes anim-forward-flick {
+  0%, 100% { transform: translate(0, 0); }
+  30% { transform: translate(0, -20px); }
+  60% { transform: translate(12px, -30px); }
+  80% { transform: translate(16px, -10px); }
+}
+
+/* ── spin-360 ────────────────────────────────── */
+@keyframes anim-spin-360 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── snap-back ───────────────────────────────── */
+@keyframes anim-snap-back {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(20px); }
+  50% { transform: translateX(22px); }
+  55% { transform: translateX(-16px); }
+  70% { transform: translateX(-18px); }
+}
+
+/* ── behind-leg ──────────────────────────────── */
+@keyframes anim-behind-leg {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-8px, 6px); }
+  50% { transform: translate(-12px, -4px); }
+  75% { transform: translate(8px, 2px); }
+}
+
+/* ── chop ────────────────────────────────────── */
+@keyframes anim-chop {
+  0%, 100% { transform: translate(0, 0); }
+  40% { transform: translate(8px, 0); }
+  50% { transform: translate(10px, 0); }
+  55% { transform: translate(-12px, 14px); }
+  80% { transform: translate(-14px, 16px); }
+}
+
+/* ── nutmeg ──────────────────────────────────── */
+@keyframes anim-nutmeg {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(4px, 0) scale(0.95); }
+  40% { transform: translate(10px, 0) scale(0.8); }
+  50% { transform: translate(14px, 0) scale(0.6); }
+  60% { transform: translate(18px, 0) scale(0.8); }
+  80% { transform: translate(22px, 0) scale(1); }
+}
+
+/* ── rainbow ─────────────────────────────────── */
+@keyframes anim-rainbow {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(0, -10px); }
+  40% { transform: translate(8px, -32px); }
+  60% { transform: translate(16px, -32px); }
+  80% { transform: translate(22px, -10px); }
+}
+
+/* ── juggle ──────────────────────────────────── */
+@keyframes anim-juggle {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-16px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-12px); }
+}
+
+/* ── drag-back ───────────────────────────────── */
+@keyframes anim-drag-back {
+  0%, 100% { transform: translate(0, 0); }
+  40% { transform: translate(-16px, 0); }
+  70% { transform: translate(-18px, 0); }
+  90% { transform: translate(-4px, 0); }
+}
+
+/* ── Sequenced input highlight ───────────────── */
+@keyframes inputHighlight {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}

@@ -1,0 +1,226 @@
+/* ═══════════════════════════════════════════════
+   MetaMoves — Design System
+   EA FC 26 Skill Moves Catalog
+   ═══════════════════════════════════════════════ */
+
+/* ── CSS Custom Properties ───────────────────── */
+:root {
+  /* Colors — Dark Theme */
+  --color-bg-primary: #06060b;
+  --color-bg-secondary: #0d0d15;
+  --color-bg-card: rgba(16, 16, 28, 0.65);
+  --color-bg-card-hover: rgba(22, 22, 38, 0.8);
+  --color-bg-glass: rgba(255, 255, 255, 0.03);
+  --color-bg-filter: rgba(12, 12, 20, 0.85);
+
+  /* Accent Colors */
+  --color-accent-primary: #00ff87;
+  --color-accent-secondary: #00e676;
+  --color-accent-gold: #ffd700;
+  --color-accent-gold-dim: rgba(255, 215, 0, 0.15);
+  --color-accent-glow: rgba(0, 255, 135, 0.15);
+  --color-accent-glow-strong: rgba(0, 255, 135, 0.3);
+
+  /* Category Colors */
+  --color-cat-basic: #60a5fa;
+  --color-cat-flicks: #f472b6;
+  --color-cat-spins: #a78bfa;
+  --color-cat-juggles: #34d399;
+  --color-cat-advanced: #fb923c;
+  --color-cat-meta: #f43f5e;
+
+  /* PlayStation Button Colors */
+  --color-ps-triangle: #00d4aa;
+  --color-ps-circle: #ff6b6b;
+  --color-ps-cross: #6b9eff;
+  --color-ps-square: #e86bff;
+
+  /* Xbox Button Colors */
+  --color-xbox-y: #ffd700;
+  --color-xbox-b: #ff4444;
+  --color-xbox-a: #44ff44;
+  --color-xbox-x: #4488ff;
+
+  /* Text */
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8b8b9e;
+  --color-text-muted: #55556a;
+  --color-text-accent: var(--color-accent-primary);
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(0, 255, 135, 0.25);
+  --color-border-active: rgba(0, 255, 135, 0.5);
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+
+  /* Spacing (4px scale) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.4), 0 0 30px var(--color-accent-glow);
+  --shadow-glow: 0 0 20px var(--color-accent-glow), 0 0 60px rgba(0, 255, 135, 0.08);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout */
+  --max-width: 1400px;
+  --header-height: 5rem;
+  --drawer-width: 560px;
+}
+
+/* ── Reset & Base ────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background ambient glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 135, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  right: -15%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 215, 0, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Typography ──────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-secondary);
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Utility Classes ─────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+/* ── Selection ───────────────────────────────── */
+::selection {
+  background: rgba(0, 255, 135, 0.2);
+  color: var(--color-text-primary);
+}
+
+/* ── Modal Scroll Lock ───────────────────────── */
+body.modal-open {
+  overflow: hidden;
+}
