@@ -6596,19 +6596,33 @@ export const skillMoves: SkillMove[] = [
     "inputs": {
       "classic": [
         { "type": "stick", "value": "RS" },
-        { "type": "direction", "value": "rotate-down-right" },
+        { "type": "direction", "value": "up" },
+        { "type": "text", "value": "+" },
+        { "type": "stick", "value": "RS" },
+        { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "alternative": [
         { "type": "stick", "value": "RS" },
-        { "type": "direction", "value": "rotate-down-right" },
+        { "type": "direction", "value": "up" },
+        { "type": "text", "value": "+" },
+        { "type": "stick", "value": "RS" },
+        { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "note": {
         "es": "Corriendo suave. Cancelar a mitad del giro para la salida falsa.",
@@ -6632,19 +6646,27 @@ export const skillMoves: SkillMove[] = [
         { "type": "text", "value": "Mantener" },
         { "type": "stick", "value": "RS" },
         { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "alternative": [
         { "type": "text", "value": "Mantener" },
         { "type": "stick", "value": "RS" },
         { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "note": {
         "es": "Cancelar cuando el balón empieza a rodar para el corte más brusco.",
@@ -6666,9 +6688,9 @@ export const skillMoves: SkillMove[] = [
     "inputs": {
       "classic": [
         { "type": "text", "value": "Mantener" },
-        { "type": "button", "value": "L2" },
+        { "type": "button", "value": "L1" },
         { "type": "text", "value": "+" },
-        { "type": "button", "value": "R2" },
+        { "type": "button", "value": "R1" },
         { "type": "text", "value": "+" },
         { "type": "stick", "value": "LS" },
         { "type": "direction", "value": "down" },
@@ -6678,9 +6700,9 @@ export const skillMoves: SkillMove[] = [
       ],
       "alternative": [
         { "type": "text", "value": "Mantener" },
-        { "type": "button", "value": "L2" },
+        { "type": "button", "value": "L1" },
         { "type": "text", "value": "+" },
-        { "type": "button", "value": "R2" },
+        { "type": "button", "value": "R1" },
         { "type": "text", "value": "+" },
         { "type": "stick", "value": "LS" },
         { "type": "direction", "value": "down" },
@@ -6712,10 +6734,14 @@ export const skillMoves: SkillMove[] = [
         { "type": "text", "value": "+" },
         { "type": "stick", "value": "RS" },
         { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "alternative": [
         { "type": "text", "value": "Mantener" },
@@ -6723,10 +6749,14 @@ export const skillMoves: SkillMove[] = [
         { "type": "text", "value": "+" },
         { "type": "stick", "value": "RS" },
         { "type": "direction", "value": "left" },
+        { "type": "text", "value": "o" },
+        { "type": "direction", "value": "right" },
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "note": {
         "es": "Corriendo suave. Izquierda o derecha según la salida deseada.",
@@ -6755,7 +6785,9 @@ export const skillMoves: SkillMove[] = [
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "alternative": [
         { "type": "stick", "value": "RS" },
@@ -6766,7 +6798,9 @@ export const skillMoves: SkillMove[] = [
         { "type": "text", "value": "+" },
         { "type": "text", "value": "Cancelar" },
         { "type": "text", "value": "con" },
-        { "type": "button", "value": "L1" }
+        { "type": "button", "value": "L2" },
+        { "type": "text", "value": "+" },
+        { "type": "button", "value": "R2" }
       ],
       "note": {
         "es": "Corriendo suave. Cancelar justo antes de que el balón se eleve.",
