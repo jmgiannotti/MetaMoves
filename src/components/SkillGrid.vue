@@ -14,7 +14,7 @@ import { ui } from '../i18n';
 </script>
 
 <template>
-  <section class="skill-grid" aria-label="Catálogo de regates">
+  <section class="skill-grid" :aria-label="ui.catalogueLabel">
     <!-- Results count -->
     <div class="skill-grid__status">
       <p class="skill-grid__count">

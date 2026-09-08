@@ -50,12 +50,12 @@ function getCategoryColor(category: string): string {
       </div>
 
       <!-- Move name -->
-      <h3 class="skill-card__name">{{ move.name }}</h3>
+      <h3 class="skill-card__name">{{ typeof move.name === 'string' ? move.name : move.name[currentLang] }}</h3>
 
       <!-- Star rating -->
       <div class="skill-card__stars">
         <StarRating :rating="move.stars" size="md" />
-        <span class="skill-card__star-label">{{ move.stars }}★ requeridas</span>
+        <span class="skill-card__star-label">{{ move.stars }}{{ ui.starsShort }}</span>
       </div>
 
       <!-- Description -->

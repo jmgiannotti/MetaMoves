@@ -59,7 +59,7 @@ onUnmounted(() => {
   </Transition>
 
   <!-- Drawer -->
-  <aside class="detail-drawer" id="skill-detail" role="dialog" :aria-label="`Detalle de ${move.name}`">
+  <aside class="detail-drawer" id="skill-detail" role="dialog" :aria-label="typeof move.name === 'string' ? move.name : move.name[currentLang]">
     <!-- Header -->
     <header class="detail-drawer__header">
       <div class="detail-drawer__header-info">
@@ -68,7 +68,7 @@ onUnmounted(() => {
         </span>
         <span v-if="move.isNew" class="detail-drawer__badge">NEW</span>
       </div>
-      <button class="detail-drawer__close" @click="emit('close')" id="detail-close" aria-label="Cerrar detalle">
+      <button class="detail-drawer__close" @click="emit('close')" id="detail-close" :aria-label="ui.closeDetail">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M18 6L6 18M6 6l12 12"/>
         </svg>
@@ -79,10 +79,10 @@ onUnmounted(() => {
     <div class="detail-drawer__body">
       <!-- Title & Stars -->
       <div class="detail-drawer__title-section">
-        <h2 class="detail-drawer__title">{{ move.name }}</h2>
+        <h2 class="detail-drawer__title">{{ typeof move.name === 'string' ? move.name : move.name[currentLang] }}</h2>
         <div class="detail-drawer__stars">
           <StarRating :rating="move.stars" size="lg" />
-          <span class="detail-drawer__star-text">{{ move.stars }}{{ ui.starsRequired }}</span>
+          <span class="detail-drawer__star-text">{{ move.stars }} {{ ui.starsRequired }}</span>
         </div>
         <p class="detail-drawer__description">{{ move.description[currentLang] }}</p>
       </div>
@@ -99,6 +99,7 @@ onUnmounted(() => {
           :move-id="move.id"
           :animation-type="move.animationType"
           :category-color="getCategoryColor(move.category)"
+          :move="move"
         />
       </section>
 

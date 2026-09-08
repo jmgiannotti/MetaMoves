@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed, defineAsyncComponent } from 'vue';
-import { currentLang } from './i18n';
 import type { FilterState, SkillMove, Platform, ControlScheme } from './types';
 import { skillMoves } from './data/skillMoves';
 import AppHeader from './components/AppHeader.vue';
@@ -29,7 +28,13 @@ const filteredMoves = computed(() => {
   return skillMoves.filter(move => {
     if (stars !== null && move.stars !== stars) return false;
     if (newOnly && !move.isNew) return false;
-    if (query && !normalize(move.name).includes(query) && !normalize(move.description[currentLang.value]).includes(query)) return false;
+    if (query) {
+      const nameMatch = typeof move.name === 'string'
+        ? normalize(move.name).includes(query)
+        : (normalize(move.name.es).includes(query) || normalize(move.name.en).includes(query));
+      const descMatch = normalize(move.description.es).includes(query) || normalize(move.description.en).includes(query);
+      if (!nameMatch && !descMatch) return false;
+    }
     return true;
   });
 });

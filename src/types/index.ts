@@ -69,7 +69,7 @@ export type AnimationType =
 
 export interface SkillMove {
   id: string;
-  name: string;
+  name: LocalizedString;
   stars: StarRating;
   category: SkillCategory;
   isNew: boolean;
